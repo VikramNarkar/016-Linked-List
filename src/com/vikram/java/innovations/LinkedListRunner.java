@@ -25,6 +25,18 @@ public class LinkedListRunner {
 		
 		l.insertAtIndex(new Node(25), 0);
 		l.printLinkedList(); // 25 7 13 3 5 10
+		
+		l.removeFirst();
+		l.printLinkedList(); // 7 13 3 5 10 
+		 
+		l.removeLast();
+		l.printLinkedList(); // 7 13 3 5
+		
+		l.removeAtIndex(1);
+		l.printLinkedList(); // 7 3 5
+		
+		l.removeAtIndex(0);
+		l.printLinkedList(); 
 
 	}
 

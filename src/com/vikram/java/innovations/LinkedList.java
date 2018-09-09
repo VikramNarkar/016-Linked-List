@@ -112,7 +112,7 @@ public class LinkedList {
 			} else {
 				int currIndex = 0;
 				Node curr = root;
-				Node nodeToBeRemoved;
+				Node nodeToBeRemoved = null;
 				
 				while (currIndex < index-1) {
 					curr = curr.getNext();
@@ -122,16 +122,27 @@ public class LinkedList {
 				if (currIndex == index-1){
 					nodeToBeRemoved = curr.getNext();
 					curr.setNext(nodeToBeRemoved.getNext());
+					
+				} else { /* Addition of code for removing root node */
+					if (curr == root) {
+						root = curr.getNext();
+						nodeToBeRemoved = curr;
+						nodeToBeRemoved.setNext(null);						
+					}
+					
+					else {
+						return null;
+					}
+											
 					nodeToBeRemoved.setNext(null);
 					size--;
 					
 					return nodeToBeRemoved;
-				} else {
-					return null;
+					
 				}
 			}
 			
-			
+			return null;
 		}		
 		
 	}
